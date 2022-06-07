@@ -8,6 +8,7 @@
 	<meta name="desciption" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="scrol.css">
 	<script type="text/javascript" src="script.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script>
@@ -21,6 +22,8 @@
 	</script>
 </head>
 <body>
+	<div id="scrollPath"></div>
+	<div id="progressbar"></div>
 	<header id="header">
 		<nav>
 			<div class="logo"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxUQExMQExMXFxYUGBcZFhYZExcXGBQYFxIZGhoTFxcZKSkhGhsmHxYWIjIjJiosLy8vGyE1OjUtOSkuLywBCgoKDg0OGxAQHCwnISYwLi4uLC4uLi4wLi4uLi4uLi8uLiwuLi4wLi4wLi4uLi4uLi4uLi4uLi4uLi4uLi4sLv/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcEBQECAwj/xABGEAACAQIDAwgECgcIAwAAAAAAAQIDEQQSIQUGMRMiQVFhcYGRFDJSoQcWQlNicqOxwdEjM0OCkrLSFzRzk6LC4fAVRGP/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAAwEQACAQIEAggGAwEAAAAAAAAAAQIDEQQSITFRcSIyQWGBocHwExSRsdHhM0JSBf/aAAwDAQACEQMRAD8AvEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGu2ntelh1z5avhFayfh0d7Ijj95q9d5KScE+CjrN+P5GNSvCno9+BnOrGO5NsTjKdLWc4x75W9xram9GHj8tvuhJkWp7vVWuUrTjST4ynPnPw6+9nSWEwseNec39GnZecjnlXq72S5sydWfBLmS2hvNh5acpb60WvfwNtSqqSUotNPg07p+JXLw2FlpGvUi/p0rrxcT1w9WtgZRmmpU5dMZZoVO59EveI4qS1kk1xWvqxGs11lpxRYoMfB4qNWEakeEldfk+0yDtTudIABIAAAAAAAAAAAAAAAAAAAAAAAAABwwBciu3t6FC9Oi05dM+Kj2R6328DD3k3gdRuhRby8JSXGf0Y9n3nGD2dTwcFXxGs36lLjr1vt9y7zjqVnN5ab07WYSqOTtHxZiYHYk6qdevN04PVyk+dLtV/xPee2Y0/0WDpWvpyjjmnPuXHz8jinRxG0p5pPLST/AHY9kV8qXb9xLNmbJp4dWhHXpk9ZPx/AzpU3L+PRf6e75cCkIN9XRce18iMYbdivXfKVp5b+088/LgvM3FDdGhHjml3yt/LYy9r7eo4VxjVk05JtWi5aJ9hg/HbCfOS/y5/kbxoUo7+ZqqcInevulQkuapRfWpN+6VzQVcHLBT5Opz6FXRvo+tb5Mo8TefHXCfOS/wAuf5HTE7ToY+jVp0m5OEc+sJKzXDV9zRFSlC14WuvdmROnHdbnO6V6br4aT/VSTT61Lp8bJ+JJSPbFV62f28PSb7Xwv7iQmtFWjbn9y9Pq2AANS4AAAAAAAAAAAAAAAAAAAAAAAAIbvXt27eHpPsqSXT9Bfj5G03n2x6PTyxf6SfD6K6ZfkaHd/BRpQeNr+rH9WnxlL2u3Xh5nJXqOT+HHxfBGFWV3kXie2BwsMBTWIrK9WX6un7P/AD1voPPZOy546o8RWbyX7s1vkx6orrOuzsJPaNZ1av6uL16uynH8X+ZOacFFKKSSSskuCXUUpU1US/ytlx72VhBS5ffvZxSpqCUYpJLRJaJHoAd1jpKv+EOvmxWX2IRXi7y/3IjJsd48RymJrT/+kku6Lyr3I1xyyd2YvcE43ApZaGKqvp5v8MG3/MiDll7n4a2Dgn+0nKT+rn181G3iTDcRNtsvD5JS+hTpU/GMW3/MjamNhYWTl0ybk/Hh7rLwMk3irI1SsgARjfPbk8LCMaVlOd3mavlStwXXr0kt2VylWrGlBzlsiTggG5G9tTEVXh61pOSk4TUVF3jq4tLS1r626CXenp1+QWrjFyn9G7ShHvd5Puj2hSTVylHEQrQU47bePvyNiACTcAAAAAAAAAAAAAAAHjiKypxlOTsoptvsSPYiu/GPywjQT9fnS+qnovF/cZ1Z5IORWcssWzSYanLaGJblez1l9GK4R/DvZk7SqvG14YajpTp6RtwstHPuXBf8nMH6JhL8KuI4dcYL/h/6uw3G5+zeSpcrJc+pr3R6F48fI4YQcmoPd6y9Ec0Yt9Hjq/wbrBYWNGEacFZRXn1t9pkgHopWOvYHjiKyhCU3wjFyfgr/AIHsabe7EcnhK7645V++1H8Q3ZAqOU3Jtvi9X3s4AOUwOGXNsjDZKFGHs04J/wAKuU9haeacI+1JLzZalTa87WSivNhVYQ6xaLS3N6azHbZp09Fzn1Lh4s0mKxc5+tJvs6PJGBXbS0V33282Y1MY9orxYlUstDJxu260uEsi6lp7+JodqVXiFaVW7XBuV7GNtDZ1WpdyqLsjZpEWlo+poyhGU9c+vvw8jxsXjJR6M4Oz4v8ABJNnYpbOz1oxU6slljJu0YJ6t5flPRdKJd8G+Hk6VTF1W5TryvmfFxg2r+bl4JFe7Pw9XHVKWHTv1yt6sflTl3L/ALqXbg8NGlCNKCtGEVGK7ErHdh4yt02bf8+PxJZo6Qjol3vd89zIAB0HsAAAAAAAAAAAAAAAArraMvSsY49DmoL6sdHbybLAxFTLGUvZTfkrlf7pv9NKq/2cKk/G1vxZyYnpShDi9TCtq4xMraS9KxkaK9SDUO6MFef4ryJylbREK3Gp56tWq+Kj75yu3/pfmTcthtU58X+iaOqcuIAB0mwIl8JFfLh4Q9uovKMW/vsS0r34Ta96lCn7MZS/ikl/tKTdolZbELABzmRudzsNymLoprRNyf7sW/vsWJjdk9NP+F/gyIfBtQvXqT9inbxlJfhFlkF1SjOPSNIrQhuIpSjpJNd6MWoTmpazva3bwI7tDadNXjQoqvU7IcxP6U0reC9xzTwXCXkZVMsFdv3yWpFNrYxUoN/Kfqrt6+5ESweDqV5qnTi5TlwS+9voXaTinudXxU+VxElBPoSTkl7MYrmpEx2NsWjhI5aULX4ybvKX1n+HA1o4bKjy5YSriqilNZYLa+/0/PDtMHdPdyOCp62lUnbPL/ZH6K95IgDsSsezTpxpxUI7IAAFwAAAAAAAAAAAAAADF2hG9KouuEl5xZAt23rXXTKhO3uZYxXLj6FiucubGT/ehK6+5+aOPE6ShN7bfU562jizbbgy/XL6j/mJiQHZ9RYHE6v9FUWkuhwlrGfhpfxJ3Cakk000+DWqZfCvoZe1FqPVtwO4OLnEmlqzpNjsVRv3Xz4uovYUIrwim/fJlpRrJ8OHX0eHWfNXwj4nlMbyl/WlJrXo5Z291ik9dCstdCSAhG0cPy2NnSzNZ5Wv1Wpp8PA9cNVq4KvGjKblCTira2am7KSvwaZllM7Fqbq7xQwSqZqcpObjqpJWUU9Ne9m//tDp/MT/AI4lAY2lTliK3KycY55c5LM730Vj12rGEaGHVKcpQzVWm1lbd9VbvLK6skXV1oXxLf8ApPR0JPvlFj+0Kmv2M/44lDwhyGIoqhVdTM45rO/GXOi7aPTXsO+35qWJlGvKcaatlyq+mX1knx14k3lxIuz6H2DvXHF1eSjSlHmuTbkmklZdHeiSlVfAfhKcYV506vKRTUU3plvrks+GkY+ZapeN7F1sAAWJAAAAAAAAAAAAAAAAAABqNu7FjiorXLOPqy/B9aNuCsoqSsyGk1ZlfVcLWox5GvRdSkruLjxhfi4TXDuaO2AxEaf6rGTpr2J0XK3ldE/OLHP8tZ6P8/VNP0Mvg22fvwaI5h8XOf8A7FSf+Hhcv+qasbGjhpN3cbds5Z5eEVzY+Bsjk2VO27+/q39y6jxMDHzVGjUqttuEJO746Rf/AHQ+b96sJOdai4wlJKKu1FtJ576s+mMXho1YSpzV4yVpK7V11XWpqPihhPmftKn5ktO+hLTPnfaFOrTxc60KM52acWoyad6aXFeJ2wuAr4rERrVoOEYuL1VtIu6ik9ePSz6G+KGE+Z+0qf1D4oYT5n7Sp+ZXK+4izPnKvQqRr1ZejOpecrZqbcWm+P8A3rPTadOrOjQccO4OMqnMhB2XCzt0X1Pon4oYT5n7Sp+Y+KGE+Y+0qf1DK+7zFmfPVLD1MLic0aUp05pXtFycYvt6Gn5o99rbQqKpOnVw3KU/2fNb/ezJPj4NF/fFDCfMfaVP6h8UMJ8x9pU/qGV9wykM+AjY1Whh6+IqJxWInHJF8bU8yc2ui7lb90tExsFhIUYRpwjljHgrt2u78XrxZkmiLgAEgAAAAAAAAAAAAAAAAAAEY3u3jngpUlCEZZ1JvNfTK1wt3knK/wDhP9fD/VqffE5MdUlToOUXZ6fdIrN2iZeC3rq1YqefCQvfmzqyjJWfSiT7NxXKUo1JSg7p3lCWaGja5sn0aGj3GwlOWEg5U4N5p6uKb9d9LNN8IuJcHSw0ObTyuTjFWTblZKy6FZvxMVXlSw6rTd9F3auxW7Subrejed4XknSUKiqZ7vNdLLl0Tj9Y22A2nGVGlUqShB1IKVnJJapN2vxWpX29GBhSoYFwik5wbm18puMHd9b5zO+9n932d/hS+6mYSxlSnKo5f1UdL8bdu5GdpssipjKcVGTqQSl6rcklLub4nrTqKSUotNPg000+5ornev8AueA/w3/JAbZ2lOlgcJRg3FVIycmnZtRfq36nm9x0SxuRyutEk/rb8ls5YXplPNk5SOb2cyv5HpUqxirykkuttJebIHs3duOI2fHk4wVWcnLPJa2jUayqS1jol7+89dtYWFKphXia8XGlBKVJxlN1JR0clFdD4Xl1dJZYqagpOKs1F3vprxuuzfyGZ2vYmlHEwn6k4y+rJP7jR7d3nhh5QpwlCc5SSks11CN7ScmuD7CF7QmqeOjKlTlSWem1HLkauo35q4J3enad956MVtBxUUk507pJWeZRcrrpu2795z1cbNweVJNSUb+q07irm7MmG9WIqSw6lhqkVzkpSVSMW1Z3jGbdr3t03MjdOVV4eLrTU5XdnmU3l6FKUdG+PuNVv/hoU8JGMIRjHlIu0YqK9WXQjTUtozobMgqbcZTqSjmWjirtuz6HpbxLzrfDxDcr6Rvvpv2L1JbtIsP0qGbJnjm9nMr+XE7V60YLNOUYrrk0l3XZWcNm0/8AxksRlXKZ757c63KKGW/Vq33nNTaU6+zpxqNydOrBKT1bi7tJvpa19xPz7W8f65lrz027hnLDq7TpQipyqwUW7KTnGza4pMyKFWM4qUZKUXwaaafc0Vzs/CQey61RxTkp6Sau1apDRPoWr8zcfBnNujVV9FNWXVeKv9xeli5TnGLXWjclS1RMwAd5cAAAAAAAAAAAAAAAEP342JWxUqLpQUlBTUryirXcbce5kwBlWoxrQcJbENXViI7Bhi8JRjQ9FU8rk83pEI3zSb4WfX1nO8mwp42nTqZVTrQTTg55k036uddOl1p0sloM/lYuHw2242tbT0SZGXSzK82tsPGYilh6boxXIxcNKkW5aRSk+haRXS+kzdt7tVa2HwsYpcpRhllByWt1G9pcLpxJsCjwNNqV23dJPw2IyIgG1thYutRw9LkoLkU42VRNvSKUneyXDgrmwxO68q+DoUZNQq0lo+K1esXboemq6iXgn5Kndt3d1Z37iciIbszDY7D0HhoUoX1yVeVVoZnf1WtdW/yMTeLdrE1qsK8cspWhntLKoyjxaUvkviT0B4ODhkbdtLa7W8P2HBNWK92lu9i6uJjXlCD1puTjJKKy2ukpO7tYyt5t2q1TE+k0VGabg3FyUWnBJW10s8qJwCHgabTTb1d9+32yMiIlvDgsTi8PkdGMZqonGKqp81Rau5OyvdnGz92pTwXotZZJqcpRaalld9HpxVm1btJcC7wsHNyld3VteHgkTlV7kBWwMWsM8Dkg4uebleU0tdPLltfirmXjt15QwXo1Ln1HOMpO6im09bX6FoTMFVgqaT32y8l3fu5GREOwew60dn1cM4LlJSbUc0bNZovjw6GZO4+yKuFhVjViouU01aSeijboJQC0cLCMoyV+irLkSooAA6SwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q==" alt="logo"></div>
@@ -31,13 +34,12 @@
 				<li><a href="#services_section">Services</a></li>
 				<li><a href="#contactus_section">Contact</a></li>
 			</ul>
-			<div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="images/icon/search.png" alt="search" onclick=slide()></div>
-			<a class="get-started" href="login.html">Get Started</a>
+			<a class="get-started" href="add_user.php">Register for the course</a>
 			<img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
 		</nav>
 		<div class="head-container">
 			<div class="quote">
-				<p>The beautiful thing about learning is that nobody can take it away from you</p>
+				<p class="element neon title "></p>
 				<h5>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and directed research!</h5>
 				<div class="play">
 					<img src="images/icon/play.png" alt="play"><span><a href="#courses_video">Watch Now</a></span>
@@ -50,8 +52,8 @@
 		<div class="side-menu" id="side-menu">
 			<div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
 			<div class="user">
-				<img src="images/creator/roshan.jpeg" alt="Username">
-				<p>roshank9419</p>
+				<img src="data:image/jpeg;base64,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" alt="logo">
+				<p></p>
 			</div>
 			<ul>
 				<li><a href="#about_section">About</a></li>
@@ -132,8 +134,8 @@
 				</center>
 			</div>
 			<div class="card">
-				<center><img src="./IMG_20210512_132012.jpg"></center>
-				<center><div class="card-title">Muzaffar Orziboyev</div>
+				<center><img src="data:image/png;base64,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"></center>
+				<center><div class="card-title">Stack Overflow</div>
 				<div id="detail">
 					<p>“ Real education should consist of drawing the goodness and the best out of our own students. What better books can there be than the book of humanity “</p>
 					<div class="duty"></div>
@@ -159,70 +161,9 @@
 		<a href="#"><div class="s-card"><img src="data:image/png;base64,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"><p>Learn to see video</p></div></a>
 	</div>
 
-<div id="makeitfull">
-	<a href="#review_section"><img src="images/icon/makeitfull.png"></a>
-</div>
-<div class="review">
-	<div class="diffSection" id="review_section">
-		<center><p style="font-size: 40px; padding: 100px; padding-bottom: 40px; color: #2E3D49;">What the Students Say About Us?</p></center>
-	</div>
-	<div class="rev-container">
-		<div class="rev-card">
-			<div class="identity">
-				<img src="images/creator/humanNotExist1.jpg"><p>Sophie Daniel</p>
-				<h6>Java</h6>
-				<div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"></div>
-			</div>
-			<div class="rev-cont">
-				<p id="title">Review:</p>
-				<p id="content">
-					I did Java Fundamenetal course with Rishab Sir. It was a great experience. The brain teasers and assignments, actually the whole lot of content was really good. Some problems were challenging yet interesting. Was explained very well where ever I stuck...
-				</p>
-			</div>
-		</div>
-		<div class="rev-card">
-			<div class="identity">
-				<img src="images/creator/humanNotExist2.jpg"><p>Clayton Clair</p>
-				<h6>C/C++</h6>
-				<div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"></div>
-			</div>
-			<div class="rev-cont">
-				<p id="title">Review:</p>
-				<p id="content">
-					When I was watching "Dear Zindagi", I could relate Sharukh Khan to Arnav Bhaiya. The way Sharukh Khan was giving life lessons to Alia Bhatt, in the same way Arnav Bhaiya will give coding life lessons which will guide you throughout your code life...
-				</p>
-			</div>
-		</div>
-		<div class="rev-card">
-			<div class="identity">
-				<img src="images/creator/humanNotExist3.jpg"><p>Devyn Sethi</p>
-				<h6>JEE</h6>
-				<div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"></div>
-			</div>
-			<div class="rev-cont">
-				<p id="title">Review:</p>
-				<p id="content">
-					LearnEd was an amazing experience for me. I belong to electronics department and had a little experience in coding but I think it has helped me think things through in a much more analytical manner. Coding is important no matter which branch you are in. It gives you a better understanding about how to approach a problem...
-				</p>
-			</div>
-		</div>
-		<div class="rev-card">
-			<div class="identity">
-				<img src="images/creator/humanNotExist4.jpg"><p>Rylee Phillips</p>
-				<h6>Python</h6>
-				<div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"></div>
-			</div>
-			<div class="rev-cont">
-				<p id="title">Review:</p>
-				<p id="content">
-					This was my first complete course at coding blocks. I attended the Python course in Winter 2020 and loved it which made me join the full course. Shubham bhaiya and Ayush Bhaiya(TA) have good knowledge about the field and were very helpful in making us understand the concepts. I would certainly recommend this to anyone...
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
 
-	<div class="diffSection" id="contactus_section">
+
+	<!-- <div class="diffSection" id="contactus_section">
 		<center><p style="font-size: 50px; padding: 100px">Contact Us</p></center>
 		<div class="csec"></div>
 		<div class="back-contact">
@@ -242,7 +183,7 @@
 			</form>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
 	<div class="title2" id="feedBACK">
@@ -254,16 +195,46 @@
 
 	<div class="feedbox">
 		<div class="feed">
-			<form action="mailto:roshank9419@gmail.com" method="post" enctype="text/plain">
-				<label>Your Name</label><br>
-				<input type="text" name="" class="fname" required="required"><br>
-				<label>Email</label><br>
-				<input type="email" name="mail" required="required"><br>
-				<label>Additional Details</label><br>
-				<textarea name="addtional"></textarea><br>
-				<button type="submit" id="csubmit">Send Message</button>
-			</form>
-		</div>
+			<div class="container">
+  				<form action="" method="post" enctype="multipart/form-data">
+  				  <div class="form-group">
+  				    <label style="font-size:30px">Name:</label><br><br>
+  				    <input type="text" class="form-control" placeholder="name" name="name">
+  				  </div>
+  				  <div class="form-group">
+					<label style="font-size:30px">Email:</label><br><br>
+					<input type="email" class="form-control" placeholder="Enter email" name="email">
+  				  </div>
+					<div class="form-group">
+					<label style="font-size:30px">Details:</label><br><br>
+					  <textarea name="details" class="form-control" placeholder="Your description"></textarea>
+					</div>
+					<br>
+  				  <input type="submit" name="insert-btn" class="btn btn-primary"/>
+  				</form>
+
+				  <?php
+		$conn = mysqli_connect('localhost','root','','webstar');
+
+		if(isset($_POST['insert-btn'])){
+			$user_name = $_POST['name'];
+			$user_email = $_POST['email'];
+			$user_password = $_POST['password'];
+			$user_details = $_POST['details'];
+
+			$insert = "INSERT INTO description(name,email,details) VALUES('$user_name','$user_email','$user_details')";
+
+			$run_insert = mysqli_query($conn,$insert);
+      var_dump($run_insert);"<br><br>";
+			if($run_insert === true){
+				echo "Your message successfuly send";
+			}else{
+				echo "You haven't successfully registered";
+			}
+		}
+	?>
+			</div>
+	</div>
 	</div>
 
 	<marquee style="background: linear-gradient(to right, #FA4B37, #DF2771); margin-top: 50px;" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="20"><div class="marqu">“Education is the passport to the future, for tomorrow belongs to those who prepare for it today.” “Your attitude, not your aptitude, will determine your altitude.” “If you think education is expensive, try ignorance.” “The only person who is educated is the one who has learned how to learn …and change.”</div></marquee>
@@ -288,13 +259,19 @@
 				<h1 style="color: #fff">Our Newsletter</h1>
 				<div class="border"></div><br>
 				<p>Enter Your Email to get our News and updates.</p>
-				<form class="newsletter-form">
+				<form class="newsletter-form" style="display:flex">
 					<input class="txtb" type="email" placeholder="Enter Your Email">
 					<input class="btn" type="submit" value="Submit">
+					<p style="margin:10px">Login to Dashboard</p>
+					<a class="btn" href="/login.php">Login</a>
 				</form>
 			</div>
 		</div>
 	</footer>
 
-</body>
+
+
+	<script src="./vendors/typed.js"></script>
+	<script src="app.js"></script>
+	</body>
 </html>
