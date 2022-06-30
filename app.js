@@ -15,3 +15,5 @@ var options = {
     onBegin: (self) => {'Muzaffar'},
   };
   var typed = new Typed('.element', options);
+
+

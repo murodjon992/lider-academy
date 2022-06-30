@@ -1,9 +1,9 @@
 <?php session_start();
-    $conn = mysqli_connect('localhost','root','','webstar');
+    // $conn = mysqli_connect('localhost','root','','webstar');
 
-    if(!isset($_SESSION['email'])){
-      echo "<script>window.open('index.php', '_self');</script>";
-    }
+    // if(!isset($_SESSION['email'])){
+    //   echo "<script>window.open('dashboardtable.php', '_self');</script>";
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -40,7 +41,7 @@
               </li>
           </li>
           <li class="nav-item">
-            <a href="index.php" class="nav-link">
+            <a href="calendar.php" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Calendar Events
@@ -107,7 +108,8 @@
         }
     }
   ?>
-  <table class="table table-bordered">
+    <? $num = 1?>
+  <table class="table table-dark table-striped table-bordered">
     <thead>
       <tr>
         <th>ID</th>
@@ -116,8 +118,7 @@
         <th>Password</th>
         <th>Image</th>
         <th>Deatils</th>
-        <th>Delete</th>
-        <th>Edit</th>
+        <th>Operation</th>
       </tr>
     </thead>
     <tbody>
@@ -134,15 +135,16 @@
           $user_details = $row_user['user_details'];
       ?>
       <tr>
-        <td><?= $user_id;?></td>
+        <td><?= $num;?></td>
         <td><?= $user_name;?></td>
-        <td><?= $user_email;?></td>
+        <td><p class="p-1 bg-warning rounded"><?= $user_email;?></p></td>
         <td><?= $user_password;?></td>
         <td><img src="upload/<?= $user_image?>" height=70px></img></td>
         <td><?= $user_details;?></td>
-        <td><a class="btn btn-danger" href="dashboardtable.php?del=<?= $user_id;?>">Delete</a></td>
-        <td><a class="btn btn-success" href="edit_user.php?edit=<?= $user_id;?>">Edit</a></td>
+        <td><a class="btn btn-danger" href="dashboardtable.php?del=<?= $user_id;?>"><i class="fa-regular fa-trash-can"></i></a>
+        <a class="btn btn-success" href="edit_user.php?edit=<?= $user_id;?>"><i class="fa-regular fa-pen-to-square"></i></a></td>
       </tr>
+      <?= $num++?>
       <?php }?>
     </tbody>
   </table>

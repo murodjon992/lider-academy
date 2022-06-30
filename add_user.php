@@ -62,7 +62,7 @@
 		}
 	?>
   
-    <a class="btn btn-success" href="/home.php"> HOME </a>
+    <a class="btn btn-success" href="/index.php"> HOME </a>
 </div>
 
 </body>

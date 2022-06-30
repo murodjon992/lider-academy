@@ -1,9 +1,9 @@
 <?php session_start();
-    $conn = mysqli_connect('localhost','root','','webstar');
+    // $conn = mysqli_connect('localhost','root','','webstar');
 
-    if(!isset($_SESSION['email'])){
-      echo "<script>window.open('index.php', '_self');</script>";
-    }
+    // if(!isset($_SESSION['email'])){
+    //   echo "<script>window.open('calendar.php', '_self');</script>";
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
